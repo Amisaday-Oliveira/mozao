@@ -1,5 +1,22 @@
 // Função para simular o efeito de máquina de escrever
+
+let audio = document.querySelector('#audio');
+        audio.volume = 0.7; // Ajuste o volume (0 a 1)
+
+        // Função que toca o áudio no toque
+        function tocarAudio() {
+            audio.play().catch(function(error) {
+                console.log('Erro ao tentar reproduzir o áudio: ', error);
+            });
+        }
+
+        // Adiciona o evento de toque (touchstart) para dispositivos móveis e clique (click) para desktop
+        document.body.addEventListener('click', tocarAudio);  // Para desktop
+        document.body.addEventListener('touchstart', tocarAudio);  // Para 
+
+
 function typingEffect(element, text, speed, callback) {
+    
     let i = 0;
     function type() {
         if (i < text.length) {
@@ -55,8 +72,7 @@ setTimeout(function() {
 }, 12000);
 
 // Ajustar o volume do áudio
-audio.play();
-document.querySelector("#audio").volume = 0.7; // Volume de 0 (silêncio) a 1 (volume máximo)
+ // Volume de 0 (silêncio) a 1 (volume máximo)
 
 // Atualizar o contador a cada segundo
 setInterval(function() {
