@@ -10,6 +10,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo de tamanho */
 }
 
 /* Estilizando a div #inicio */
@@ -18,44 +19,125 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
+    width: 90%; /* Ajusta para ser mais responsivo */
     max-width: 600px;
-    margin-bottom: 20px;
+    margin: 20px; /* Adiciona espaçamento em volta */
 }
 
+/* Estilizando o contador */
 #contador {
     font-size: 2rem;
     font-weight: bold;
     color: #1565C0; /* Azul escuro */
+    font-family: "Courier New", Courier, monospace;
 }
 
+/* Título h2 */
 h2 {
     font-size: 1.2rem;
     color: #0D47A1; /* Azul mais intenso */
+    font-family: "Courier New", Courier, monospace;
+}
+
+p {
+    color: #1c508897;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 /* Estilizando o carrossel */
 .carrossel {
     position: relative;
-    width: 320px;
-    height: 220px;
+    width: 100%; /* A largura será 100% da tela disponível */
+    max-width: 720px; /* Limita a largura máxima para comportar duas imagens */
+    height: 200px;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    background-color: white;
+    box-shadow: 1px 1px 10px rgba(249, 3, 3, 0.625);
+    background-color: rgb(119, 77, 72);
     padding: 10px;
+    margin-top: 20px; /* Espaço acima do carrossel */
 }
 
 /* Configurando a transição das imagens */
 .imagens {
+    
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 1.0s ease-in-out;
 }
 
 .imagens img {
-    width: 300px;
-    height: 200px;
-    border-radius: 8px;
-    object-fit: cover;
-    margin: 0 auto;
+    
+    width: 50%; /* Cada imagem ocupará 50% da largura do carrossel */
+    height: 100%; /* As imagens ocupam toda a altura da div */
+    border-radius: 10px;
+    object-fit: cover; /* Assegura que a imagem preenche toda a div, cortando onde necessário */
+}
+
+/* Ajustes para telas menores (responsividade) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Adiciona um pouco de espaçamento nas bordas em dispositivos menores */
+    }
+
+    #inicio {
+        width: 100%; /* Ocupa toda a largura da tela em dispositivos móveis */
+        padding: 15px; /* Reduz o padding */
+    }
+
+    .carrossel {
+        width: 100%; /* A largura do carrossel será 100% */
+        max-width: none; /* Remove o limite máximo de largura */
+    }
+
+    h2 {
+        font-size: 1rem; /* Reduz o tamanho da fonte para h2 em telas menores */
+    }
+}
+
+/* Ajustes para dispositivos muito pequenos */
+@media (max-width: 480px) {
+    #contador {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte do contador em telas muito pequenas */
+    }
+
+    .carrossel {
+        height: 180px; /* Ajusta a altura do carrossel em telas muito pequenas */
+    }
+
+    .imagens img {
+        height: 180px; /* Ajusta a altura das imagens em telas pequenas */
+    }
+}
+
+#botao-estilizado {
+    background-color: #733434; /* Cor de fundo verde */
+    color: white; /* Texto branco */
+    font-size: 16px; /* Tamanho da fonte */
+    padding: 15px 32px; /* Preenchimento interno do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 25px; /* Bordas arredondadas */
+    cursor: pointer; /* Aponta o cursor como uma mãozinha */
+    transition: all 0.3s ease; /* Efeito suave de transição */
+    font-family: 'Arial', sans-serif; /* Fonte padrão */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    font-family: fantasy;
+}
+
+/* Efeito de hover (passar o mouse por cima) */
+#botao-estilizado:hover {
+    background-color: #a05745; /* Cor de fundo um pouco mais escura */
+    transform: translateY(-2px); /* Eleva o botão */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Aumenta a sombra */
+}
+
+/* Efeito de clique */
+#botao-estilizado:active {
+    transform: translateY(1px); /* Movimento de pressionar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Diminui a sombra */
+}
+
+/* Efeito de foco (quando o botão é focado) */
+#botao-estilizado:focus {
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 0 4px rgba(76, 153, 175, 0.5); /* Adiciona um contorno suave ao redor */
 }

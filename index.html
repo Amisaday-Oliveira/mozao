@@ -8,12 +8,16 @@
 </head>
 <body>
 
+    <audio id="audio" src="mp3.mp3"></audio>
+
+    <!-- Div inicial com o contador -->
     <div id="inicio">
         <h1 id="contador"></h1>
-        <h2>que eu namoro a pessoa mais maravilhosa do universo e eu que amo demaaais!</h2>
+        <h2 style="display: none;"></h2>
     </div>
 
-    <div class="carrossel">
+    <!-- O restante da página ficará oculto inicialmente -->
+    <div class="carrossel" style="display: none;">
         <div class="imagens">
             <img src="img/1.jpeg">
             <img src="img/2.jpeg">
@@ -22,7 +26,7 @@
             <img src="img/6.jpeg">
             <img src="img/7.jpg">
             <img src="img/8.jpeg">
-            <img src="img/9.jpg">
+            <img src="img/9.jpg"> 
             <img src="img/10.jpeg">
             <img src="img/11.jpeg">
             <img src="img/13.jpeg">
@@ -35,12 +39,26 @@
             <img src="img/31.jpeg">
             <img src="img/24.jpeg">
             <img src="img/28.jpeg">
-
+            <img src="img/12.jpeg">
+            <img src="img/3.png">
+            <img src="img/35.jpeg">
+            <img src="img/30.jpeg">
+            <img src="img/33.jpeg">
+            <img src="img/17.jpeg">
+            <img src="img/18.jpeg">
+            <img src="img/20.jpeg">
+            <img src="img/21.jpeg">
+            <img src="img/22.jpeg">
         </div>
     </div>
 
-    <script src="index.js"></script>
-    
-</body>
+    <br><p id="mensagem" style="display: none;">Neném, cada millisegundo que te tenho, pra mim é valioso! Saiba que eu sou grato por ter meu bem na minha vida! És a melhor namorada que alguém pode ter, e esse alguém sou eu! hehe 😉</p>
 
+    <button style="display: none;" id="botao-estilizado" onclick="jogo()">
+        ❤️🎮 play 🎮❤️
+    </button>
+
+    <script src="index.js"></script>
+
+</body>
 </html>
