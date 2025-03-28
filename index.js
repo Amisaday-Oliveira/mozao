@@ -56,7 +56,7 @@ setTimeout(function() {
 
 // Ajustar o volume do áudio
 audio.play();
-document.querySelector("audio").volume = 0.7; // Volume de 0 (silêncio) a 1 (volume máximo)
+document.querySelector("#audio").volume = 0.7; // Volume de 0 (silêncio) a 1 (volume máximo)
 
 // Atualizar o contador a cada segundo
 setInterval(function() {
