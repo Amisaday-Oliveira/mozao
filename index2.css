@@ -1,0 +1,87 @@
+/* Fonte romântica e clean */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Anton', sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Frase digitada */
+#frase {
+    font-size: 1.4rem;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Botões estilosos */
+button {
+    font-size: 1.3rem;
+    padding: 12px 24px;
+    margin: 10px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ffffff;
+    color: #ee9ca7;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #ffe3e3;
+}
+
+/* Botão de coração com destaque */
+#tocarAudio {
+    font-size: 2rem;
+    background-color: #fff0f5;
+    color: #d6336c;
+}
+
+/* Efeito de fade-in suave para o botão brincar */
+button[onclick] {
+    opacity: 0;
+    transition: opacity 1s ease;
+    display: none;
+}
+
+/* Aparece suavemente depois */
+button[onclick].show {
+    display: inline-block;
+    opacity: 1;
+}
+
+/* Animação para o botão "Brincar" piscar */
+@keyframes piscar {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+button[onclick].piscar {
+    animation: piscar 1.5s infinite;
+}
+
+/* Responsivo (caso precise mais tarde para tablets) */
+@media (min-width: 600px) {
+    #frase {
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 1.5rem;
+        padding: 16px 32px;
+    }
+}
